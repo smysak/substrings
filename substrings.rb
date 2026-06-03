@@ -8,12 +8,16 @@ end
 
 
 def get_words
-
+    puts ""
+    puts "Enter the string:"
+    words = gets.strip.downcase
 end
 
 
 def choose_dictionary
-
+    puts ""
+    puts "Enter the dictionary:"
+    dictionary = gets.strip.downcase
 end
 
 
