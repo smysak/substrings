@@ -2,7 +2,7 @@ ADJECTIVES = %w[ white black red yellow blue open shut large small cute furry fr
 NOUNS = %w[ door monster sword chest treasure wall window room pit me myself enemy ]
 VERBS = %w[ look try attack open close enter take get give kill hit pat poke peek ]
 
-def substrings(words dictionary)
+def substrings(words, dictionary)
     puts "hello. this isn't working yet."
 end
 
@@ -30,5 +30,5 @@ def choose_dictionary
 end
 
 
-substrings(get_words choose_dictionary)
+substrings(get_words, choose_dictionary)
 
