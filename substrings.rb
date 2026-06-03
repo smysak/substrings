@@ -3,4 +3,19 @@ nouns = [ door, monster, sword, chest, treasure, wall, window, room, pit, me, my
 verbs = [ look, try, attack, open, close, enter, take, get, give, kill, hit, pat, poke, peek ]
 
 def substrings(words, dictionary)
-    
+
+end
+
+
+def get_words
+
+end
+
+
+def choose_dictionary
+
+end
+
+
+substrings(get_words, choose_dictionary)
+
