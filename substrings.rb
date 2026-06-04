@@ -8,12 +8,9 @@ DICTIONARIES = {
 
 def substrings(string, dictionary)
   puts "\nYou have chosen to search in '#{dictionary}'."
-  result = Hash.new(0)
-  DICTIONARIES[dictionary].each do |word|
+  result = DICTIONARIES[dictionary].each_with_object(Hash.new(0)) do |word, result|
     matches = string.scan(word).length
-    if matches > 0
-      result[word] = matches
-    end
+    result[word] = matches if matches > 0
   end
   puts "\n" + "=" * 37
   puts "RESULTS"
