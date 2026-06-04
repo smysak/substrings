@@ -4,17 +4,33 @@ DICTIONARIES = {
     verbs: %w[ look try attack open close enter take get give kill hit pat poke peek ]
 }
 
-
-def substrings(words, dictionary)
-    puts DICTIONARIES[dictionary]
+def substrings(string, dictionary)
+    puts "\nYou have chosen to search in '#{dictionary}'."
+    result = Hash.new(0)
+    DICTIONARIES[dictionary].each do |word|
+        matches = string.scan(word).length
+        if matches > 0
+            result[word] = matches
+        end
+    end
+    puts "\n" + "=" * 37
+    puts "RESULTS"
+    puts "=" * 37
+    if result.empty?
+        puts "\nYou have found no matches in '#{dictionary}'."
+    else
+        puts "\nYou have found the following matches:"
+        result.each do |word, matches|
+            puts "  ‣ #{word.capitalize} X #{matches}"
+        end
+    end
+    puts "\n" + "=" * 37
 end
 
-
-def get_words
+def get_string
     puts "\nEnter the string:"
-    words = gets.strip.downcase
+    string = gets.strip.downcase
 end
-
 
 def choose_dictionary
     puts "\nEnter the dictionary:"
@@ -30,5 +46,4 @@ def choose_dictionary
     dictionary
 end
 
-
-substrings(get_words, choose_dictionary)
+substrings(get_string, choose_dictionary)
