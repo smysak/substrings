@@ -37,15 +37,12 @@ end
 def choose_dictionary
   puts "\nEnter the dictionary:"
   dictionary = gets.strip.downcase
-
   if dictionary.match?(/^(?:adjectives|nouns|verbs)$/)
     dictionary = dictionary.to_sym
   else
     puts "'#{dictionary}' is not a valid dictionary."
     exit(1)
   end
-
-  dictionary
 end
 
 substrings(get_string, choose_dictionary)
