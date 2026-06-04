@@ -26,6 +26,7 @@ def substrings(string, dictionary)
     end
   end
   puts "\n" + "=" * 37
+  puts "\n"
 end
 
 def get_string
