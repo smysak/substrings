@@ -12,9 +12,11 @@ def substrings(string, dictionary)
     matches = string.scan(word).length
     result[word] = matches if matches > 0
   end
+
   puts "\n" + "=" * 37
   puts "RESULTS"
   puts "=" * 37
+
   if result.empty?
     puts "\nYou have found no matches in '#{dictionary}'."
   else
@@ -28,14 +30,15 @@ end
 
 def get_string
   puts "\nEnter the string:"
-  string = gets.strip.downcase
+  gets.strip.downcase
 end
 
 def choose_dictionary
   puts "\nEnter the dictionary:"
   dictionary = gets.strip.downcase
+
   if dictionary.match?(/^(?:adjectives|nouns|verbs)$/)
-    dictionary = dictionary.to_sym
+    dictionary.to_sym
   else
     puts "'#{dictionary}' is not a valid dictionary."
     exit(1)
